@@ -51,7 +51,7 @@ function countVowels(str) {
 
 // Check if a Number is Prime
 function isPrime(n) {
-  if (typeof n !== 'number' || n <= 1) {
+  if (typeof n !== "number" || n <= 1) {
     console.error("Los datos no corresponden, agregue un número mayor a 1");
     return false;
   }
