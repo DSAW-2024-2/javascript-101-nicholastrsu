@@ -1,17 +1,15 @@
 // Sum of Two Numbers
 function sum(a, b) {
-  if (typeof a !== "número" || typeof b !== "número") {
+  if (typeof a !== "number" || typeof b !== "number") {
     console.log("Los datos no corresponden, agregue dos números");
     return;
   }
   return a + b;
-
 }
-
 
 // Factorial of a Number
 function factorial(n) {
-  if (typeof n !== "número" || n < 0 || !Number.isInteger(n)) {
+  if (typeof n !== "number" || n < 0 || !Number.isInteger(n)) {
     console.log("Los datos no corresponden, agregue un número positivo");
     return;
   }
@@ -25,9 +23,19 @@ function factorial(n) {
   return result;
 }
 
+
+// Find the Largest Number
+function findLargest(arr) {
+  if (!Array.isArray(arr) || arr.some(el => typeof el !== "number")) {
+    console.log("Los datos no corresponden, agregue un arreglo de números");
+    return;
+  }
+  return Math.max(arr);
+}
+
 // Count Vowels in a String
 function countVowels(str) {
-  if (typeof str !== "String") {
+  if (typeof str !== "string") {
     console.log("Los datos no corresponden");
     return;
   }
@@ -43,8 +51,8 @@ function countVowels(str) {
 
 // Check if a Number is Prime
 function isPrime(n) {
-  if(!Number(n)||n<=1){
-    console.error("Los datos no corresponden, agregue un número que sea mayor a 1");
+  if (typeof n !== 'number' || n <= 1) {
+    console.error("Los datos no corresponden, agregue un número mayor a 1");
     return false;
   }
   for (let i = 2; i <= Math.sqrt(n); i++) {
@@ -52,6 +60,7 @@ function isPrime(n) {
   }
   return true;
 }
+
 
 
 module.exports = {
