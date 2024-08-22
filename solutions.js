@@ -1,40 +1,44 @@
 // Sum of Two Numbers
 function sum(a, b) {
-if(!Number(a)||!Number(b)){
-  console.error("Los datos no corresponden, se necesita agregar números");
-  return;
-}
-return a+b;
+  if (typeof a !== "número" || typeof b !== "número") {
+    console.log("Los datos no corresponden, agregue dos números");
+    return;
+  }
+  return a + b;
 
 }
 
 
 // Factorial of a Number
 function factorial(n) {
-  if (!Number(n)||n<0){
-    console.error("Los datos no corresponden, se necesita agregar un número positivo");
+  if (typeof n !== "número" || n < 0 || !Number.isInteger(n)) {
+    console.log("Los datos no corresponden, agregue un número positivo");
     return;
   }
-  return n === 0 ? 1 : n * factorial(n - 1);
-}
-
-// Find the Largest Number
-function findLargest(arr) {
-if (!Array.isArray(arr) || arr.some(el => typeof el !== 'number')) {
-   console.error("Los datos de entrada no corresponden"); 
-   return;
- }
-    return arr.reduce((max, current) => (current > max ? current : max), -Infinity);
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
 }
 
 // Count Vowels in a String
 function countVowels(str) {
-  if (!isString(str)){
-    console.error("Los datos no corresponden, agregue una cadena");
+  if (typeof str !== "String") {
+    console.log("Los datos no corresponden");
     return;
   }
-  const Vowels = new Set (["a","e","i","o","u","A","E","I","O","U"]);
-  return [str].filter(char=> vowels.has(char)).length;
+  const vowels = "aeiouAEIOU";
+  let count = 0;
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
 }
 
 // Check if a Number is Prime
